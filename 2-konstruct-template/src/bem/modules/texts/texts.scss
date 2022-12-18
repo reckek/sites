@@ -1,0 +1,17 @@
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--C-Text-2);
+
+  &::after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    width: 50px;
+    height: 2px;
+    background-color: var(--C-Bg-1);
+  }
+}
+
+.desc {
+}

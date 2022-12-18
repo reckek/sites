@@ -1,0 +1,24 @@
+.idea
+build
+
+# IDE
+*.sublime-*
+
+__MACOSX
+.Saved
+_arc
+.publish
+.DS_Store
+*.log
+
+# modules and components
+bower_components
+node_modules
+
+# arhives
+zip/**
+*.zip
+*.rar
+
+ex_files
+Thumbs.db

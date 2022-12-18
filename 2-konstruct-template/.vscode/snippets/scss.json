@@ -1,0 +1,12 @@
+{
+	"scss media": {
+		"scope": "scss",
+		"prefix": "gp-media",
+		"body": [
+			"@include container(${1:BrackePoint}) using (\\$type) {",
+      "   $2",
+			"}"
+		],
+		"description": "быстрое выведение media запроса"
+	}
+}

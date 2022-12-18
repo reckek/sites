@@ -1,0 +1,17 @@
+.logo {
+  z-index: 20;
+  max-width: 100%;
+
+  // .logo__icon
+
+  &__icon {
+    max-width: 118px;
+    max-height: 32px;
+    color: $C-Text-1;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: $C-Hover;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.portfolio {
+  min-width: 100%;
+
+  // .portfolio__row
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    justify-items: center;
+    justify-content: center;
+
+    @include container(xs) using ($type) {
+      & {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  // .portfolio__item
+
+  &__item {
+    min-width: 100%;
+
+  }
+
+  // .portfolio__link
+
+  &__link {
+    min-width: 100%;
+  }
+
+  // .portfolio__imgage
+
+  &__imgage {
+    max-width: 100%;
+    min-width: 100%;
+    vertical-align: bottom;
+  }
+}

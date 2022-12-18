@@ -1,0 +1,32 @@
+{
+  "import component": {
+    "prefix": "gp-import-cmp",
+    "body": [
+      "<!-- @import \"../bem/components/$1/$1.kit\" -->"
+    ],
+    "description": "Snippet import bem component"
+  },
+  "import module": {
+    "prefix": "gp-import-mod",
+    "body": [
+      "<!-- @import \"../bem/modules/$1/$1.kit\" -->"
+    ],
+    "description": "Snippet import bem module"
+  },
+  "import svg": {
+    "prefix": "gp-import-svg",
+    "body": [
+      "<svg class=\"\">",
+      "  <use xlink:href=\"assets/icons/stack/icons.stack.svg#$1\"></use>",
+      "</svg>"
+    ],
+    "description": "Snippet for use svg sprites"
+  },
+  "image use": {
+    "prefix": "gp-import-image",
+    "body": [
+      "<img src=\"assets/images/$1\" alt=\"$2\" aria-label=\"$3\" class=\"$4\" />"
+    ],
+    "description": "Snippet for use svg sprites"
+  }
+}

@@ -1,0 +1,28 @@
+.section-header {
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding-top: 80px;
+  max-width: 509px;
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: min(10vw, torem(40));
+    text-align: center;
+    color: $C-Text-1;
+
+    > .section-header__span {
+      display: block;
+      font-weight: 700;
+      font-size: torem(16);
+      text-align-last: left;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: torem(14);
+    text-align: center;
+    color: $C-Text-1;
+  }
+}

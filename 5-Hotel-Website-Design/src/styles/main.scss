@@ -1,0 +1,28 @@
+/*
+    Flie: main.scss
+    @description: linked all files .scss
+*/
+
+// libs
+@import "./vendor/libs";
+
+//  Varibles
+@import "./helpers/varibles";
+
+//  Mixins
+@import "./helpers/mixins";
+
+//  Functions
+@import "./helpers/functions";
+
+//  Fonts
+@import "./base/fonts";
+
+//  General
+@import "./base/general";
+
+//  Modules
+@import "./base/modules";
+
+//  Blocks
+@import "../bem/blocks";

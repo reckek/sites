@@ -1,0 +1,87 @@
+.navbar {
+  position: relative;
+  border-bottom: 1px solid var(--C-Line-1);
+
+  &.fixed {
+    margin-bottom: 120px;
+
+    .navbar__row {
+      position: fixed;
+      left: 0;
+      top: -90px;
+      border-bottom: 1px solid var(--C-Line-2);
+      padding-right: 10px;
+      padding-left: 10px;
+      min-width: 100%;
+      max-height: 60px;
+      background-color: rgb(216 216 216 / 60%);
+      transform: translateY(90px);
+      transition: all 0.6s ease-out;
+    }
+  }
+
+  // .navbar__row
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+  }
+
+  // .navbar__link
+
+  &__link {
+  }
+
+  // .navbar__burger
+
+  &__burger {
+  }
+}
+
+.nav {
+  padding: 20px 0;
+
+  // .nav__items
+
+  &__items {
+    display: flex;
+    gap: 50px;
+  }
+
+  // .nav__item
+
+  &__item {
+    width: 100%;
+
+    @include container(md) using ($type) {
+      width: unset;
+    }
+  }
+
+  // .nav__link
+
+  &__link {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 3rem;
+    letter-spacing: 1.09px;
+    text-align: left;
+    color: var(--C-Text-2);
+
+    @include container(md) using ($type) {
+      &:hover {
+        font-weight: 700;
+        font-style: normal;
+        font-size: 12px;
+        color: var(--C-Text-3);
+      }
+    }
+
+    @include container(md) using ($type) {
+      font-size: 12px;
+    }
+  }
+}

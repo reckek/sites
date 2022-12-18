@@ -1,0 +1,99 @@
+.clients {
+  background-color: $C-Bg-3;
+
+  // .clients__container
+
+  &__container {
+  }
+
+  // .clients__header
+
+  &__header {
+    margin: 0 auto;
+    max-width: 479px;
+  }
+
+  // .clients__list
+
+  &__list {
+  }
+
+  // .clients__item-list
+
+  &__item-list {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 30px 35px;
+    background-color: $C-Bg-1;
+    gap: 30px;
+  }
+
+  // .clients__item-reting
+
+  &__item-reting {
+    display: flex;
+    gap: 5px;
+  }
+
+  // .clients__reting
+
+  &__reting {
+    color: $C-Bg-4;
+  }
+
+  // .clients__text
+
+  &__text {
+    font-weight: 600;
+    color: $C-Text-3;
+  }
+
+  // .clients__user-box
+
+  &__user-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  // .clients__avatar-box
+
+  &__avatar-box {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  // .clients__avatar
+
+  &__avatar {
+    border: 1px solid $C-Muted;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  // .clients__ueser-box
+
+  &__ueser-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // .clients__user-name
+
+  &__user-name {
+    font-weight: 600;
+    font-size: torem(14);
+    color: $C-Text-6;
+  }
+
+  // .clients__user-job
+
+  &__user-job {
+    font-weight: 600;
+    font-size: torem(14);
+    color: $C-Text-4;
+  }
+}

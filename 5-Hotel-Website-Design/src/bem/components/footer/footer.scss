@@ -1,0 +1,153 @@
+.footer {
+  padding-top: 40px;
+
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__top
+
+  &__top {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 44px;
+    gap: 20px;
+  }
+
+  // .footer__contacts
+
+  &__contacts {
+    align-items: center;
+    justify-content: space-between;
+    gap: min(3vw, 20px);
+  }
+
+  // .footer__nav
+
+  &__nav {
+    margin-bottom: 70px;
+  }
+
+  // .footer__nav-lists
+
+  &__nav-lists {
+    gap: 30px;
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  // .footer__name
+
+  &__name {
+    font-weight: 700;
+    font-size: rem(16);
+    color: $C-Text-1;
+  }
+
+  // .footer__items
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  // .footer__item
+
+  &__item {
+    color: $C-Text-2;
+    transition: all 0.4s ease;
+
+    a {
+      color: $C-Text-2;
+      transition: all 0.4s ease;
+
+      &:hover {
+        color: $C-Hover;
+      }
+    }
+
+    &:hover {
+      color: $C-Hover;
+    }
+  }
+
+  // *====================================================*
+  // .footer__bottom
+
+  &__bottom {
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+    font-weight: 600;
+    font-size: rorem(14);
+    color: $C-Text-1;
+    background-color: $C-Bg-2;
+  }
+}
+
+.subscribe {
+  // .subscribe__box
+
+  &__box {
+    position: relative;
+    display: flex;
+    flex-flow: wrap;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+
+  // .subscribe__input
+
+  &__input {
+    position: relative;
+    flex: 1 1 auto;
+    border-top: 1px solid $C-Lianer-1;
+    border-right: 0 solid $C-Lianer-1;
+    border-bottom: 1px solid $C-Lianer-1;
+    border-left: 1px solid $C-Lianer-1;
+    border-radius: 3px 0 0 3px;
+    padding: 15px 20px;
+    width: 1%;
+    min-width: 0;
+    color: $C-Text-3;
+
+    &::placeholder {
+      color: $C-Muted;
+    }
+  }
+
+  // .subscribe__button
+
+  &__button {
+    right: 0;
+    z-index: 2;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid $C-Lianer-1;
+    border-radius: 0 3px 3px 0;
+    padding: toem(15) toem(20);
+    min-width: 127px;
+    font-family: inherit;
+    font-size: torem(14);
+    text-align: center;
+    color: $C-Text-1;
+    background-color: $C-Bg-4;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $C-Hover;
+    }
+  }
+}

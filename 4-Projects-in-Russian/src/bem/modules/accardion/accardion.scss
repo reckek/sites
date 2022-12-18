@@ -1,0 +1,50 @@
+.accardion {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  align-items: start;
+  justify-content: center;
+
+  // .accardion__item
+
+  &__item {
+    max-width: 650px;
+  }
+
+  // .accardion__question
+
+  &__title {
+    color: var(--C-Accent);
+    cursor: pointer;
+    & > svg {
+      transition: all 0.2s ease-out;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+  &__item--active > button > .accardion__title > svg {
+    transform: rotate(90deg);
+  }
+
+  // .accardion__reply (close)
+
+  &__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+
+    margin-left: 4px;
+    padding-left: 20px;
+    border-left: 4px solid var(--C-Accent);
+    color: var(--C-Gray);
+    transform: translateY(-10px);
+    transition: all .2s ease-out;
+  }
+  &__item--active > .accardion__content {
+    max-height: 100%;
+    opacity: 1;
+    overflow: visible;
+    transform: translateY(0);
+  }
+}

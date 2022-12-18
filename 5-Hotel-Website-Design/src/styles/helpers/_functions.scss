@@ -1,0 +1,81 @@
+@use "sass:color";
+
+@function check-braeckpoint($braeckpoint) {
+  $value: $braeckpoint;
+
+  // ╔════════╦══════════╗
+  // ║Данные  ║ Значения ║
+  // ╠════════╬══════════╣
+  // ║ sm     ║ 576px    ║
+  // ╠════════╬══════════╣
+  // ║ xs     ║ 576px    ║
+  // ╠════════╬══════════╣
+  // ║ md     ║ 768px    ║
+  // ╠════════╬══════════╣
+  // ║ lg     ║ 992px    ║
+  // ╠════════╬══════════╣
+  // ║ xl     ║ 1200px   ║
+  // ╠════════╬══════════╣
+  // ║ xxl    ║ 1400px   ║
+  // ╚════════╩══════════╝
+
+  @if $braeckpoint == sm {
+    $value: 576px;
+  }
+
+  @if $braeckpoint == xs {
+    $value: 576px;
+  }
+
+  @if $braeckpoint == md {
+    $value: 768px;
+  }
+
+  @if $braeckpoint == lg {
+    $value: 992px;
+  }
+
+  @if $braeckpoint == xl {
+    $value: 1200px;
+  }
+
+  @if $braeckpoint == xxl {
+    $value: 1400px;
+  }
+
+  @return $value;
+}
+
+@function convert-num-to-px($number) {
+  @if unitless($number) {
+    $number: $number * 1px;
+  }
+
+  @return $number;
+}
+
+@function torem($px, $contenxt: $root-fz) {
+  $px: convert-num-to-px($px);
+  $remValue: calc($px / $contenxt) * 1rem;
+
+  @return $remValue;
+}
+
+@function toem($px, $contenxt: $root-fz) {
+  $px: convert-num-to-px($px);
+  $emValue: calc($px / $contenxt) * 1em;
+
+  @return $emValue;
+}
+
+@function tolight($value, $light) {
+  $color: color.adjust($value, $lightness: $light);
+
+  @return $color;
+}
+
+@function alpha($value, $alpha) {
+  $color: color.change($value, $alpha: $alpha);
+
+  @return $color;
+}

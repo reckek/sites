@@ -1,0 +1,19 @@
+@if $use-grid == true {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: $gap;
+
+    > .row-not-grow {
+      flex-grow: 0;
+    }
+
+    @for $index from 1 to ($columns + 1) {
+      > .col-#{$index} {
+        flex: 1 1 calc((100% / $columns * $index) - $gap);
+      }
+    }
+  }
+}

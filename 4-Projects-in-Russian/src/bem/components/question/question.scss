@@ -1,0 +1,17 @@
+.question {
+  padding: min(8vw, 120px) 0;
+
+  // .question__titel
+
+  &__titel {
+    text-align: center;
+    font-size: min(6vw, 2rem);
+    margin-bottom: min(4vw, 50px);
+  }
+
+  // .question__accardion
+
+  &__accardion {
+    flex-direction: column;
+  }
+}

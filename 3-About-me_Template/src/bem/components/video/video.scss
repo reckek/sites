@@ -1,0 +1,17 @@
+.video {
+    background-color: $color-1;
+    &__content {
+        margin: 0 auto;
+        padding: min(4vw, 50px) 0;
+        max-width: 540px;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: min(2vh, 50px);
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+}

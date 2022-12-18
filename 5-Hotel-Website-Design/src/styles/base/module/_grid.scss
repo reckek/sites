@@ -1,0 +1,72 @@
+@mixin grid-flex {
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: $gap;
+
+    &__down {
+      flex-direction: column;
+    }
+
+    > .row-not-grow {
+      flex-grow: 0;
+    }
+
+    @for $index from 1 to ($columns + 1) {
+      > .col-#{$index} {
+        flex: 1 1 calc((100% / $columns * $index) - $gap);
+      }
+    }
+  }
+}
+
+@mixin grid-grid {
+  .grid {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media screen and (min-width: 576px) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    @each $key, $value in $breakPoints {
+      @if $key == "sm" {
+        @media screen and (min-width: $value) {
+          @for $column from 1 to ($columns + 1) {
+            .col-#{$column} {
+              grid-column: #{$column} span;
+            }
+          }
+        }
+      } @else {
+        @media screen and (min-width: $value) {
+          @for $column from 1 to ($columns + 1) {
+            .col-#{$key}-#{$column} {
+              grid-column: #{$column} span;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $use-gird == "flex" {
+  @include grid-flex;
+
+  @debug "GRID -> you usege grid: flex grid";
+} @else if $use-gird == "grid" {
+  @include grid-grid;
+
+  @debug "GRID -> you usege grid: grid";
+} @else if $use-gird == "all" {
+  @include grid-flex;
+  @include grid-grid;
+
+  @debug "GRID -> you usege grid: flex grid and grid";
+} @else {
+  @debug "GRID -> you not usege grid";
+}

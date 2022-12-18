@@ -1,0 +1,110 @@
+.burger {
+  &__body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 10px 0;
+    height: calc(var(--app-vh) * 100);
+    min-width: 100%;
+    background-color: var(--C-Bg-3);
+    transform: translate(-100%);
+    gap: 20px;
+
+    &.burger__body--active {
+      transform: translate(0%);
+    }
+
+    @include container(md) using ($type) {
+      position: unset;
+      flex-direction: row;
+      padding: 0;
+      width: unset;
+      height: unset;
+      background-color: unset;
+      transform: translate(0%);
+      transition: unset;
+    }
+  }
+
+  // .burger__nav
+
+  &__nav {
+    flex: 1 1 auto;
+
+    > .nav__items {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+
+      @include container(md) using ($type) {
+        flex-direction: row;
+      }
+    }
+
+    @include container(md) using ($type) {
+      flex: unset;
+    }
+  }
+
+  // .burger__contacts
+
+  &__contacts {
+    margin: 0 auto;
+    padding-bottom: 5px;
+  }
+
+  // .burger__btn
+
+  &__btn {
+    position: relative;
+    z-index: 90;
+    border: unset;
+    padding: 0;
+    width: 30px;
+    height: 25px;
+    background-color: unset;
+    cursor: pointer;
+
+    &::before,
+    &::after,
+    > span {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--C-Line-2);
+      transition: all 0.2s ease-out;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &--active {
+      &::before {
+        transform: translateY(12px) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translateY(-10px) rotate(45deg);
+      }
+
+      > span {
+        transform: scale(0.01);
+      }
+    }
+
+    @include container(md) using ($type) {
+      display: none;
+    }
+  }
+}

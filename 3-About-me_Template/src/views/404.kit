@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 404</title>
+    
+    <!-- To be placed in the head tag -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
+  </head>
+  <body>
+    <div class="error">
+      <div class="error__body">
+        <div class="error__content">
+          <h1 class="error__title">Error: 404</h1>
+          <p class="error__desc">{ page not found }</p>
+          <a href="/" class="btn error__btn">
+            Прейти на основной сайт
+          </a>
+        </div>
+      </div>
+    </div>
+    <style>
+      body {
+        margin: 0;
+        background-color: #333;
+      }
+      .error {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .error__body {
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px;
+        color: #000;
+        background-color: #fff;
+      }
+      .error__content {
+        text-align: center;
+        font-size: 30px;
+      }
+      .error__title {
+        margin: 0.3rem 0;
+      }
+      .error__desc {
+        margin: 0.3rem 0 1rem;
+      }
+      .btn {
+        display: inline-block;
+        min-width: 120px;
+        padding: 15px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #7427f0;
+        transition: all 0.2s ease-out;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #3427f0;
+      }
+    </style>
+  </body>
+</html>

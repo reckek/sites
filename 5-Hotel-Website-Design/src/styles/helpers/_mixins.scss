@@ -1,0 +1,33 @@
+@mixin container($braeckpoint, $conent...) {
+  /* ╔═════════════════════════════════════════════════════╗
+  // ║                 Использование                       ║
+  // ╠═════════════════════════════════════════════════════╣
+  // ║ @include container(BrackePoint) using ($type) {...} ║
+  // ╚═════════════════════════════════════════════════════╝
+  */
+
+  $value: check-braeckpoint($braeckpoint);
+
+  @if $braeckpoint != sm {
+    @media (min-width: $value) {
+      @content ($conent);
+    }
+  }
+
+  @if $braeckpoint == sm {
+    @media (max-width: $value) {
+      @content ($conent);
+    }
+  }
+}
+
+// <== FONTS ==>
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    src: url("../assets/fonts/#{$file_name}.woff") format("woff"), url("../assets/fonts/#{$file_name}.woff2") format("woff2");
+    font-family: $font_name;
+    font-weight: #{$weight}; // 100, 200, 300, 400, 500, 600, 700, 800, 900
+    font-style: #{$style}; // normal, italic, oblique
+    font-display: swap;
+  }
+}

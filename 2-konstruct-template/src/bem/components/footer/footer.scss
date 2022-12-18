@@ -1,0 +1,123 @@
+.footer {
+  // .footer__bg
+
+  &__bg {
+    background-color: var(--C-Bg-3);
+  }
+
+  // .footer__row
+
+  &__row {
+    align-items: start;
+    justify-items: center;
+    grid-gap: min(6vw, 22px);
+    padding: 41px 0;
+  }
+
+  // .footer__company
+
+  &__company {
+  }
+
+  // .footer__links
+
+  &__links {
+  }
+
+  // .footer__contact-us
+
+  &__contact-us {
+  }
+
+  // .footer__title
+
+  &__title {
+    margin-bottom: 19px;
+    font-size: 11px;
+    color: var(--C-Text-1);
+  }
+
+  // .footer__logo
+
+  &__logo {
+    margin-bottom: 15px;
+    width: 101px;
+    height: 23px;
+  }
+
+  // .footer__description
+
+  &__description {
+    font-size: 11px;
+    color: var(--C-Text-1);
+  }
+
+  // .footer__lists
+
+  &__lists {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+
+    &--contact-us {
+      grid-template-columns: repeat(1, 1fr);
+
+      @include container(md) using ($type) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &--icons {
+      flex-direction: row;
+    }
+  }
+
+  // .footer__item
+
+  &__item {
+    display: block;
+  }
+
+  // .footer__link
+
+  &__link {
+    font-weight: 200;
+    font-style: italic;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--C-Text-1);
+    transition: all 0.2s ease-out;
+
+    > svg {
+      width: 21px;
+      height: 21px;
+      fill: var(--C-Text-1);
+      transition: all 0.2s ease-out;
+    }
+
+    &:hover {
+      color: var(--C-Text-3);
+
+      > svg {
+        fill: var(--C-Text-3);
+      }
+    }
+  }
+
+  // .footer__end
+
+  &__end {
+    padding: 22px 0;
+    text-align: center;
+    color: var(--C-Text-1);
+    background-color: var(--C-Bg-2);
+  }
+}

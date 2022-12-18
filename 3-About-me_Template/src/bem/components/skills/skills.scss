@@ -1,0 +1,50 @@
+.skills {
+  &__body {
+    padding: min(6vw, 100px) 0;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    padding-bottom: 50px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+  }
+
+  &__progress {
+    min-width: 100%;
+    border-radius: 0;
+    height: 4px;
+    &::-webkit-progress-bar {
+      background-color: $color-5;
+    }
+    &::-webkit-progress-value {
+      background-color: $color-3;
+    }
+  }
+
+  &__img {
+    display: none;
+    max-width: 555px;
+    max-height: 450px;
+  }
+  @include container(lg) using ($type) {
+    &__img {
+      display: inline-block;
+      max-width: 555px;
+      max-height: 450px;
+    }
+  }
+}

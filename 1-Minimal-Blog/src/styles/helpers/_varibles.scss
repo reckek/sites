@@ -1,0 +1,29 @@
+$breakPoints: (
+  sm: 576px,
+  xs: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+$defaultMaxWidth: 1200px; // count columns in module container
+
+$use-grid: true; // import grid in module grid
+$columns: 12; // count columns in module grid
+$gap: 16px;
+$is-mobile-first: true;
+
+:root {
+  // SETTINGS FONTS
+  --font-family: "Inter", sans-serif;
+  --font-size: initial; // 14px
+
+  // COLORS
+  --C-White: #fff;
+  --C-Black: #454444;
+  --C-Black-RGBA: rgba(69 68 68 / 97%);
+  --C-RiverBed: #4a5568;
+  --C-Alabaster: #fbfbfb;
+  --C-Gray: #718096;
+  --C-Purple: #6b46c1;
+}

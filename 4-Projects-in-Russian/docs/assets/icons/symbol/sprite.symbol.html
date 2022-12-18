@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-Polygon-dims { width: 12px; height: 13px; }
+	.svg-mail-dims { width: 18px; height: 15px; }
+	.svg-mail-2-dims { width: 49px; height: 36px; }
+	.svg-map-dims { width: 37px; height: 49px; }
+	.svg-phone-dims { width: 49px; height: 49px; }
+	.svg-service-dims { width: 60px; height: 48px; }
+	.svg-wotch-dims { width: 47px; height: 48px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+
+<!--
+
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/svg-sprite/svg-sprite/blob/1.5.x/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol fill="none" viewBox="0 0 12 13" id="Polygon" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.5L.75 12.995V.005L12 6.5z" fill="#F7654A"/></symbol>
+		<symbol fill="none" viewBox="0 0 18 15" id="mail" xmlns="http://www.w3.org/2000/svg"><path d="M18 4.703a5.916 5.916 0 01-1.005.874c-1.677 1.135-3.364 2.28-5.002 3.465-.843.623-1.888 1.387-2.983 1.387h-.02c-1.095 0-2.14-.764-2.983-1.387-1.638-1.195-3.325-2.33-4.992-3.465A5.617 5.617 0 010 4.703v7.976c0 .883.723 1.607 1.607 1.607h14.786c.884 0 1.607-.723 1.607-1.607V4.703zm0-2.953c0-.884-.733-1.607-1.607-1.607H1.607C.532.143 0 .987 0 1.97c0 .914 1.015 2.05 1.728 2.531 1.557 1.085 3.134 2.17 4.69 3.265.653.452 1.758 1.376 2.572 1.376h.02c.814 0 1.919-.924 2.572-1.376 1.556-1.095 3.133-2.18 4.7-3.265C17.166 3.89 18 2.875 18 1.75z" fill="#000"/></symbol>
+		<symbol fill="none" viewBox="0 0 49 36" id="mail-2" xmlns="http://www.w3.org/2000/svg"><path d="M44 0H5C2.469 0 .5 2.063.5 4.5v27C.5 34.031 2.469 36 5 36h39c2.438 0 4.5-1.969 4.5-4.5v-27C48.5 2.062 46.437 0 44 0zm0 4.5v3.844c-2.156 1.781-5.531 4.406-12.656 10.031-1.594 1.219-4.688 4.219-6.844 4.125-2.25.094-5.344-2.906-6.938-4.125C10.438 12.75 7.063 10.125 5 8.344V4.5h39zm-39 27V14.156c2.063 1.688 5.156 4.125 9.75 7.781 2.063 1.594 5.719 5.157 9.75 5.063 3.938.094 7.5-3.469 9.656-5.063A1543.15 1543.15 0 0144 14.157V31.5H5z" fill="#F7654A"/></symbol>
+		<symbol fill="none" viewBox="0 0 37 49" id="map" xmlns="http://www.w3.org/2000/svg"><path d="M18.5 0C8.469 0 .5 8.156.5 18c0 6.75 2.156 8.813 14.156 27.938a4.472 4.472 0 007.594 0C34.25 26.811 36.5 24.75 36.5 18c0-9.938-8.156-18-18-18zm0 43.5C6.5 24.375 5 23.156 5 18c0-7.406 6-13.5 13.5-13.5C25.906 4.5 32 10.594 32 18c0 5.156-1.5 6.188-13.5 25.5zM11 18c0 4.219 3.281 7.5 7.5 7.5 4.125 0 7.5-3.281 7.5-7.5 0-4.125-3.375-7.5-7.5-7.5-4.219 0-7.5 3.375-7.5 7.5z" fill="#F7654A"/></symbol>
+		<symbol fill="none" viewBox="0 0 49 49" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M45.125 3.156l-8.813-1.969c-2.062-.468-4.124.563-4.874 2.438l-4.125 9.563c-.75 1.687-.282 3.75 1.218 4.968l3.75 3.094c-2.625 4.875-6.75 8.906-11.625 11.625l-3.093-3.75c-1.22-1.5-3.282-1.969-4.97-1.219l-9.562 4.032C1.156 32.78.125 34.843.594 36.906l1.969 8.813C3.03 47.687 4.813 49 6.78 49 29.75 49 48.5 30.437 48.5 7.375c0-1.969-1.406-3.75-3.375-4.219zM6.969 44.5L5 36.062l9.188-3.937 5.25 6.375c9.28-4.406 14.062-9.188 18.468-18.469l-6.375-5.25 3.938-9.187L44 7.562C43.906 27.907 27.312 44.407 6.969 44.5z" fill="#F7654A"/></symbol>
+		<symbol fill="none" viewBox="0 0 60 48" id="service" xmlns="http://www.w3.org/2000/svg"><path d="M22.875 36h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm0-18h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm-9 0h-3.75C9.469 18 9 18.563 9 19.125v3.75C9 23.531 9.469 24 10.125 24h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm0 18h-3.75C9.469 36 9 36.563 9 37.125v3.75C9 41.531 9.469 42 10.125 42h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm0-9h-3.75C9.469 27 9 27.563 9 28.125v3.75C9 32.531 9.469 33 10.125 33h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm9 0h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm27 9h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm0-9h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm7.875-9H48V2.25C48 1.031 46.969 0 45.75 0h-19.5C24.937 0 24 1.031 24 2.25V9h-3V1.5c0-.75-.75-1.5-1.5-1.5H18c-.844 0-1.5.75-1.5 1.5V9h-6V1.5C10.5.75 9.75 0 9 0H7.5C6.656 0 6 .75 6 1.5V9H2.25C.937 9 0 10.031 0 11.25V46.5c0 .844.656 1.5 1.5 1.5H3c.75 0 1.5-.656 1.5-1.5v-33h24v-9h15v18h12v24c0 .844.656 1.5 1.5 1.5h1.5c.75 0 1.5-.656 1.5-1.5V20.25c0-1.219-1.031-2.25-2.25-2.25zM37.875 9h-3.75C33.469 9 33 9.563 33 10.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75C39 9.562 38.437 9 37.875 9zm0 18h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125zm0-9h-3.75c-.656 0-1.125.563-1.125 1.125v3.75c0 .656.469 1.125 1.125 1.125h3.75c.563 0 1.125-.469 1.125-1.125v-3.75c0-.563-.563-1.125-1.125-1.125z" fill="#F7654A"/></symbol>
+		<symbol fill="none" viewBox="0 0 47 48" id="wotch" xmlns="http://www.w3.org/2000/svg"><path d="M23.5.75C10.656.75.25 11.156.25 24S10.656 47.25 23.5 47.25 46.75 36.844 46.75 24 36.344.75 23.5.75zm0 42A18.685 18.685 0 014.75 24c0-10.313 8.344-18.75 18.75-18.75 10.313 0 18.75 8.438 18.75 18.75 0 10.406-8.438 18.75-18.75 18.75zM29.219 33c.562.375 1.218.281 1.593-.281l1.782-2.344c.375-.563.281-1.219-.282-1.594l-6.187-4.593V10.874c0-.563-.563-1.125-1.125-1.125h-3c-.656 0-1.125.563-1.125 1.125v15.469c0 .281.094.656.375.843L29.219 33z" fill="#F7654A"/></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank" rel="noopener noreferrer">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/svg-sprite/svg-sprite/blob/1.5.x/docs/configuration.md#defs--symbol-mode" target="_blank" rel="noopener noreferrer">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank" rel="noopener noreferrer">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="Polygon">
+					<div class="icon-box">
+
+						<!-- Polygon -->
+						<svg class="svg-Polygon-dims">
+							<use xlink:href="#Polygon"></use>
+						</svg>
+
+					</div>
+					<h2>Polygon</h2>
+				</li>
+				<li title="mail">
+					<div class="icon-box">
+
+						<!-- mail -->
+						<svg class="svg-mail-dims">
+							<use xlink:href="#mail"></use>
+						</svg>
+
+					</div>
+					<h2>mail</h2>
+				</li>
+				<li title="mail-2">
+					<div class="icon-box">
+
+						<!-- mail-2 -->
+						<svg class="svg-mail-2-dims">
+							<use xlink:href="#mail-2"></use>
+						</svg>
+
+					</div>
+					<h2>mail-2</h2>
+				</li>
+				<li title="map">
+					<div class="icon-box">
+
+						<!-- map -->
+						<svg class="svg-map-dims">
+							<use xlink:href="#map"></use>
+						</svg>
+
+					</div>
+					<h2>map</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+
+						<!-- phone -->
+						<svg class="svg-phone-dims">
+							<use xlink:href="#phone"></use>
+						</svg>
+
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="service">
+					<div class="icon-box">
+
+						<!-- service -->
+						<svg class="svg-service-dims">
+							<use xlink:href="#service"></use>
+						</svg>
+
+					</div>
+					<h2>service</h2>
+				</li>
+				<li title="wotch">
+					<div class="icon-box">
+
+						<!-- wotch -->
+						<svg class="svg-wotch-dims">
+							<use xlink:href="#wotch"></use>
+						</svg>
+
+					</div>
+					<h2>wotch</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<ul>
+
+				<li title="Polygon">
+					<div class="icon-box">
+
+						<!-- Polygon -->
+						<svg class="svg-Polygon-dims">
+							<use xlink:href="../stack/icons.stack.svg#Polygon"></use>
+						</svg>
+
+					</div>
+					<h2>Polygon</h2>
+				</li>
+				<li title="mail">
+					<div class="icon-box">
+
+						<!-- mail -->
+						<svg class="svg-mail-dims">
+							<use xlink:href="../stack/icons.stack.svg#mail"></use>
+						</svg>
+
+					</div>
+					<h2>mail</h2>
+				</li>
+				<li title="mail-2">
+					<div class="icon-box">
+
+						<!-- mail-2 -->
+						<svg class="svg-mail-2-dims">
+							<use xlink:href="../stack/icons.stack.svg#mail-2"></use>
+						</svg>
+
+					</div>
+					<h2>mail-2</h2>
+				</li>
+				<li title="map">
+					<div class="icon-box">
+
+						<!-- map -->
+						<svg class="svg-map-dims">
+							<use xlink:href="../stack/icons.stack.svg#map"></use>
+						</svg>
+
+					</div>
+					<h2>map</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+
+						<!-- phone -->
+						<svg class="svg-phone-dims">
+							<use xlink:href="../stack/icons.stack.svg#phone"></use>
+						</svg>
+
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="service">
+					<div class="icon-box">
+
+						<!-- service -->
+						<svg class="svg-service-dims">
+							<use xlink:href="../stack/icons.stack.svg#service"></use>
+						</svg>
+
+					</div>
+					<h2>service</h2>
+				</li>
+				<li title="wotch">
+					<div class="icon-box">
+
+						<!-- wotch -->
+						<svg class="svg-wotch-dims">
+							<use xlink:href="../stack/icons.stack.svg#wotch"></use>
+						</svg>
+
+					</div>
+					<h2>wotch</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Wed, 26 Jan 2022 20:40:10 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

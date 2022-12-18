@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "Syler.sass-indented",
+    "box-of-hats.bemhelper",
+    "stylelint.vscode-stylelint",
+    "jerryhong.autofilename",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "mkaufman.HTMLHint",
+    "dbaeumer.vscode-eslint",
+    "rebornix.project-snippets"
+  ]
+}

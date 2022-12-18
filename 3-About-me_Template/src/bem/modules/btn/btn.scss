@@ -1,0 +1,13 @@
+.btn {
+  display: inline-block;
+  padding: 20px 64px;
+
+  text-transform: uppercase;
+  
+  color: $color-1;
+  background-color: $color-3;
+  transition: all 0.2s ease-out;
+  &:hover {
+    background-color: $color-4;
+  }
+}

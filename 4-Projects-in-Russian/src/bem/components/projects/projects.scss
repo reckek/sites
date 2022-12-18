@@ -1,0 +1,18 @@
+// PROJECTS
+.projects {
+  padding-bottom: 35px;
+  // .projects__body
+  &__body {
+    position: relative;
+    min-width: 100%;
+  }
+
+  // .projects__title
+
+  &__title {
+    font-size: min(6vw, 3rem);
+    margin-bottom: min(3vw, 60px);
+    text-align: center;
+    color: var(--C-Dark);
+  }
+}

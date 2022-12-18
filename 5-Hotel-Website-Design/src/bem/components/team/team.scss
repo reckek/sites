@@ -1,0 +1,92 @@
+.team {
+  // .team__container
+
+  &__container {
+    padding-bottom: 94px;
+  }
+
+  // .team__cards
+
+  &__cards {
+    display: grid;
+    grid-gap: 30px;
+  }
+
+  // .team__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: $C-Bg-1;
+  }
+
+  // .team__img-box
+
+  &__img-box {
+    min-height: 231px;
+    max-width: 100%;
+    max-height: 435px;
+  }
+
+  // .team__img
+
+  &__img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  // .team__content-box
+
+  &__content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 60px;
+    gap: 15px;
+  }
+
+  // .team__name
+
+  &__name {
+    font-weight: 700;
+    font-size: rem(16);
+    text-align: center;
+  }
+
+  // .team__job
+
+  &__job {
+    font-weight: 600;
+    font-size: rem(14);
+    text-align: center;
+    color: $C-Text-3;
+  }
+
+  // .team__social-media
+
+  &__social-media {
+    text-align: center;
+  }
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+
+  // .social-media__item
+
+  &__item {
+    font-size: torem(24);
+    color: $C-Text-5;
+    transition: color 0.4s ease;
+
+    &:hover {
+      color: $C-Hover;
+    }
+  }
+}

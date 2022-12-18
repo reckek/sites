@@ -1,0 +1,86 @@
+// Таблица со значениями
+// ╔════════╦══════════╗ 
+// ║Данные  ║ Значения ║
+// ╠════════╬══════════╣ 
+// ║ sm     ║ <=576px  ║
+// ╠════════╬══════════╣ 
+// ║ xs     ║ >=576px  ║
+// ╠════════╬══════════╣ 
+// ║ md     ║ >=768px  ║
+// ╠════════╬══════════╣ 
+// ║ lg     ║ >=992px  ║
+// ╠════════╬══════════╣ 
+// ║ xl     ║ >=1200px ║
+// ╠════════╬══════════╣ 
+// ║ xxl    ║ >=1400px ║
+// ╚════════╩══════════╝
+
+$breakPoints: (
+  sm: 576px,
+  xs: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+$columns: 12;
+$gap: 16px;
+
+.container {
+  margin: 0 auto;
+
+  transition: all .4s;
+  max-width: 1200px;
+  padding: 0 10px;
+}
+
+@if $is-mobile-first == true {
+  @each $index, $value in $breakPoints {
+    @if $index != sm {
+      @media (min-width: $value) {
+        .container {
+          min-width: $value;
+        }
+      }
+    }
+
+    @if $index == sm {
+      @media (max-width: $value) {
+        .container {
+          max-width: $value;
+        }
+      }
+    }
+  }
+}
+@if $is-mobile-first == false {
+  @each $index, $value in $breakPoints {
+    @if $index != sm {
+      @media (max-width: $value) {
+        .container {
+          min-width: $value;
+        }
+      }
+    }
+
+    @if $index == sm {}
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $gap;
+  box-sizing: border-box;
+
+  & > .row-not-grow {
+    flex-grow: 0;
+  }
+
+  @for $index from 1 to ($columns + 1) {
+    & > .col-#{$index} {
+      flex: 1 1 calc((100% / $columns * $index) - $gap);
+    }
+  }
+}

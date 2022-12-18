@@ -1,0 +1,60 @@
+// <DEFAULT SETTINGS>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+
+  // add the .now-scroll class to the body
+  &.now-scroll {
+    // position: fixed;
+    // left: 0;
+    // top: 0;
+    // overflow: hidden;
+    // width: 100%;
+    // height: 100vh;
+    overflow: hidden;
+  }
+}
+// </DEFAULT SETTINGS>
+
+// <ПОЗИЦИОНИРОВАНИЕ HEADER И FOOTER>
+.wrapper {
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  & > .content {
+    flex: 1 1 auto;
+  }
+}
+// </ПОЗИЦИОНИРОВАНИЕ HEADER И FOOTER>
+
+// <FONTS>
+// IMPORT FILE
+@import "fonts";
+// </FONTS>
+
+// <ОБНУЛЕНИЕ СТИЛЕЙ>
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+dl,
+ol,
+ul {
+  margin: 0;
+}
+button {padding: 0;background-color: unset;border: none;}
+// </ОБНУЛЕНИЕ СТИЛЕЙ>

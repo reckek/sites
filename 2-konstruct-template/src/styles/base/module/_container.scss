@@ -1,0 +1,24 @@
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: calc($defaultMaxWidth + 10px);
+  transition: all 0.4s;
+}
+
+@each $index, $value in $breakPoints {
+  @if $index != sm {
+    @media (min-width: $value) {
+      .container {
+        min-width: $value;
+      }
+    }
+  }
+
+  @if $index == sm {
+    @media (max-width: $value) {
+      .container {
+        max-width: $value;
+      }
+    }
+  }
+}

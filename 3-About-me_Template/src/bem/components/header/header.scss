@@ -1,0 +1,198 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  background-color: rgba(238, 239, 241, 0.9);
+
+  // .header__row
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: min(5vw, 20px) 0;
+    z-index: 19;
+  }
+
+  // .header__logo
+
+  &__logo {
+    z-index: 20;
+  }
+
+  // .header__menu
+
+  &__menu {
+  }
+}
+
+.menu {
+  // .menu__btn
+  &__btn {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    z-index: 20;
+
+    &::after,
+    &::before,
+    & > span {
+      content: "";
+      position: absolute;
+      height: 5px;
+      border-radius: 5px;
+      background-color: $color-3;
+      transition: all 0.2s ease-out;
+    }
+    &::before {
+      top: 0;
+      right: 0;
+      width: 40%;
+    }
+    & > span {
+      top: 45%;
+      left: 40%;
+      width: 60%;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    &_active {
+      &::before {
+        top: 45%;
+        width: 100%;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 45%;
+        width: 100%;
+        transform: rotate(-45deg);
+      }
+
+      & > span {
+        top: 45%;
+        left: 0;
+        width: 0%;
+      }
+    }
+
+    @include container(md) using ($type) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  // .menu__body
+
+  &__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 100px 30px 30px 30px;
+    transition: all 0.3s ease-out;
+    background-color: rgba(13, 9, 61, 0.815);
+
+    &::before {
+      content: "";
+      position: fixed;
+      display: block;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 80px;
+      background-color: rgba(13, 9, 61, 1);
+      transition: all 0.3s ease-out;
+      z-index: 15;
+      overflow-y: auto;
+    }
+    &_active {
+      left: 0;
+      &::before {
+        left: 0;
+      }
+    }
+    @include container(md) using ($type) {
+      & {
+        position: unset;
+        padding: 0;
+        background-color: unset;
+        overflow-y: none;
+      }
+      &::before {
+        background-color: unset;
+      }
+    }
+  }
+
+  // .menu__list
+
+  &__list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: min(10vw, 40px);
+
+    @include container(md) using ($type) {
+      & {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+      }
+    }
+  }
+
+  // .menu__link
+
+  &__link {
+    font-size: 26px;
+    padding-bottom: 5px;
+    color: $color-2;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 5px;
+      width: 100%;
+      height: 3px;
+      
+      opacity: 0;
+      background-color: $color-3;
+
+      transition: all .2s ease-out;
+    }
+
+    @include container(md) using ($type) {
+      & {
+        font-size: 16px;
+        color: $color-4;
+        
+        &:hover::after {
+          opacity: 1;
+
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  display: block;
+  width: min(20vw, 90px);
+}

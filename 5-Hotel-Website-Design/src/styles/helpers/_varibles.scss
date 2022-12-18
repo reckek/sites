@@ -1,0 +1,71 @@
+$breakPoints: (
+  sm: 576px,
+  xs: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// <module `container`>
+$defaultMaxWidth: 1055px; // count columns in module container
+// </ module `container`>
+
+// </ module `grid`>
+$use-gird: all; // Use grid {flex, gird, all, false}
+$columns: 12; // count columns in module grid
+$gap: 16px; // Gap for grid
+// </ module `grid`
+
+// *===============================================================*
+// Colors
+$C-Text-1: #fff;
+$C-Text-2: #bdbdbd;
+$C-Text-3: #737373;
+$C-Text-4: #252b42;
+$C-Text-5: #00a0c1;
+$C-Text-6: #ffa62b;
+$C-Bg-1: #fff;
+$C-Bg-2: #00a0c1;
+$C-Bg-3: #252b42;
+$C-Bg-4: #ffa62b;
+$C-Bg-5: #f3f3f3;
+$C-Bg-6: #000;
+$C-Bg-7: #d9edff;
+$C-Bg-8: #a9d6ff;
+$C-Lianer-1: #e6e6e6;
+
+// Coloer Event
+$C-Hover: #2a7cc7;
+$C-Disbled-element: #8ec2f2;
+$C-Muted: #bdbdbd;
+$C-Succes: #2dc071;
+$C-Alert: #e77c40;
+$C-Danger: #e74040;
+
+// < module `root`
+$root-Bg: $C-Bg-3;
+$root-fz: 14px;
+
+// </ module `root`
+
+// zindex
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-offcanvas-backdrop: 1040 !default;
+$zindex-offcanvas: 1045 !default;
+$zindex-modal-backdrop: 1050 !default;
+$zindex-modal: 1055 !default;
+$zindex-popover: 1070 !default;
+$zindex-tooltip: 1080 !default;
+$zindex-toast: 1090 !default;
+
+// *===============================================================*
+
+:root {
+  // SETTINGS FONTS
+  --font-family: "Montserrat", sans-serif;
+  --ff-2: "Roboto", sans-serif;
+  --font-size: $root-fz; // 14px
+}

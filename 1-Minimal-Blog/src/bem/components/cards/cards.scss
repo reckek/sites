@@ -1,0 +1,135 @@
+.cards {
+  padding: 30px 0;
+
+  // .cards__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+    gap: 33px;
+
+    @include container(xs) using ($type) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include container(md) using ($type) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // .cards__item
+
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border: 1px solid #e2e2e2;
+
+    @include container(md) using ($type) {
+      &--full-w {
+        display: grid;
+        grid-column: 1 / span 3;
+        grid-template-columns: repeat(2, 1fr);
+
+        > .cards__body {
+          grid-area: 1/2;
+        }
+
+        > .cards__content {
+          padding-right: 70px;
+          padding-left: 52px;
+        }
+      }
+
+      &--bg {
+        border: unset;
+        background-color: var(--C-Alabaster);
+      }
+    }
+  }
+
+  // .cards__body
+
+  &__body {
+    max-width: 100%;
+  }
+
+  // .cards__image
+
+  &__image {
+    vertical-align: bottom;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  // .cards__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 17px;
+  }
+
+  // .cards__title
+
+  &__title {
+    margin-bottom: 15px;
+
+    > a {
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: var(--C-Black);
+    }
+
+    &:focus {
+      outline: unset;
+      border: 1px solid #20dde4;
+    }
+  }
+
+  // .cards__desc
+
+  &__desc {
+    margin-bottom: 22px;
+    font-size: 1rem;
+    color: var(--C-Gray);
+  }
+
+  // .cards__down
+
+  &__down {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  // .cards__time
+
+  &__time {
+    font-size: 12px;
+    color: var(--C-Gray);
+  }
+
+  // .cards__box
+
+  &__box {
+    text-align: right;
+  }
+
+  // .cards__link
+
+  &__link {
+    font-weight: 800;
+    color: var(--C-Black);
+
+    &:hover {
+      color: var(--C-Gray);
+    }
+  }
+
+  &__button {
+    margin-top: 31px;
+    text-align: right;
+  }
+}

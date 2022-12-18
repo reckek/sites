@@ -1,0 +1,120 @@
+.nav {
+  // .nav__body
+
+  &__body {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 90px;
+    width: 100%;
+    height: calc(var(--vh) * 100);
+    background-color: $C-Bg-3;
+    transform: translateY(-100%);
+    gap: 30px;
+
+    &--active {
+      transform: translateY(0);
+    }
+
+    @include container(xs) using ($type) {
+      position: unset;
+      flex-direction: row;
+      align-items: unset;
+      padding-top: unset;
+      height: unset;
+      background-color: unset;
+      transform: unset;
+      gap: min(2vw, 16px);
+    }
+  }
+
+  // .nav__item
+
+  &__item {
+  }
+
+  // .nav__link
+
+  &__link {
+    padding: 5px;
+    font-size: 30px;
+    color: #fff;
+    transition: color 0.4s ease-out;
+
+    &:hover {
+      color: $C-Hover;
+    }
+
+    @include container(xs) using ($type) {
+      font-size: 14px;
+    }
+  }
+
+  // .nav__button
+
+  &__button {
+    position: relative;
+    display: inline-block;
+    border: unset;
+    padding: 10px;
+    min-width: 24px;
+    min-height: 13px;
+    background-color: unset;
+    cursor: pointer;
+
+    &::before,
+    &::after,
+    > span {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 2px;
+      background-color: $C-Bg-1;
+      transition: all 0.4s linear;
+    }
+
+    &::before {
+      top: 0;
+      width: 100%;
+    }
+
+    &::after {
+      bottom: 0%;
+      width: 50%;
+    }
+
+    > span {
+      top: 45%;
+      width: 80%;
+    }
+
+    &--active {
+      &::before {
+        top: 45%;
+        width: 100%;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 45%;
+        width: 100%;
+        transform: rotate(-45deg);
+      }
+
+      > span {
+        transform: scale(0);
+      }
+    }
+
+    @include container(xs) using ($type) {
+      display: none;
+    }
+  }
+
+  @include container(xs) using ($type) {
+    display: inline-block;
+  }
+}

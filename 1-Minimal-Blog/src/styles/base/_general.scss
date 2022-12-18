@@ -1,0 +1,70 @@
+@import "fonts";
+
+// <=============================================>
+// <DEFAULT SETTINGS>
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+
+  // add the .now-scroll class to the body
+  &.now-scroll {
+    overflow: hidden;
+  }
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+input {
+  font-family: var(--font-family);
+}
+
+// </DEFAULT SETTINGS>
+// <=============================================>
+
+// <=============================================>
+// <ПОЗИЦИОНИРОВАНИЕ HEADER И FOOTER>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  > .content {
+    flex: 1 1 auto;
+  }
+}
+
+// </ПОЗИЦИОНИРОВАНИЕ HEADER И FOOTER>
+// <=============================================>
+
+// <=============================================>
+// <ОБНУЛЕНИЕ СТИЛЕЙ>
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+dl,
+ol,
+ul {
+  margin: 0;
+}
+
+// </ОБНУЛЕНИЕ СТИЛЕЙ>
+// <=============================================>

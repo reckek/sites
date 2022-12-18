@@ -1,0 +1,25 @@
+// <========================================>
+$is-mobile-first: true;
+
+:root {
+  // Container
+  --container-maw: 1110px;
+  --container-pad: 0 10px;
+
+  // SETTINGS FONTS
+  --font-OpenSans: "Open Sans", sans-serif;
+  --font-Awesome: "FontAwesome", sans-serif;
+  --font-size: initial;
+
+  // COLORS
+  --C-Accent: #f7654a;
+  --C-Dark: #404149;
+  --C-Gray: #999999;
+  --C-GrayLite: #f7f7f7;
+  --C-White: #ffffff;
+
+  // Animation
+  --A-delay: .2s;
+  --A-timing-func: ease-out;
+}
+// <========================================>

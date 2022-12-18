@@ -1,0 +1,135 @@
+// SLIDER
+.slider {
+  position: relative;
+  width: 100%;
+
+  // <=====================================>
+  // SLIDER
+
+  // .slider__viewport
+
+  &__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  // .slider__list
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    transition: all 0.4s ease-out;
+
+    @include container(md) using ($type) {
+      column-gap: 30px;
+    }
+  }
+
+  // .slider__item
+
+  &__item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    padding: 0 50px;
+
+    @include container(md) using ($type) {
+      min-width: 0;
+      padding: 0;
+    }
+  }
+  // <=====================================>
+
+  // <=====================================>
+  // SLIDER ITEM CONTENT
+
+  // .slider__container
+
+  &__container {
+    max-width: 100%;
+  }
+
+  // .slider__image
+
+  &__image {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  // .slider__title
+
+  &__title {
+    & > a {
+      color: var(--C-Dark);
+      transition: all 0.2s ease-out;
+      &:hover {
+        color: var(--C-Accent);
+      }
+    }
+    margin-bottom: 16px;
+
+    &::before {
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      width: 55px;
+      height: 7px;
+      margin: min(4vw, 50px) 0 min(4vw, 16px) 0;
+      background-color: var(--C-Accent);
+    }
+  }
+
+  // .slider__desc
+
+  &__desc {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.4;
+    color: var(--C-Gray);
+  }
+}
+
+// <=====================================>
+// SLIDER CONTROLLS BUTTONS
+.slider-controlls {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  // .slider-controlls__btn
+
+  @include container(md) using ($type) {
+    display: none;
+  }
+
+  &__btn {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+<<<<<<< HEAD
+    transform: translateY(-30px);
+=======
+>>>>>>> hotfix-1.2
+
+    & > svg {
+      width: 29px;
+      height: 20px;
+      margin: 10px;
+      fill: var(--C-Dark);
+      user-select: none;
+    }
+  }
+}

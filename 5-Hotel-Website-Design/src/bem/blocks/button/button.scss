@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  border: unset;
+  border-radius: 5px;
+  padding: toem(10) toem(36);
+  min-width: 157px;
+  font-weight: 700;
+  font-size: torem(14);
+  text-align: center;
+  color: $C-Text-1;
+  background-color: $C-Bg-4;
+  transition: background-color 0.4s ease-out, border 0.4s ease-out;
+  cursor: pointer;
+
+  // .btn__round
+
+  &.btn__round {
+    border: 1px solid $C-Bg-5;
+    border-radius: 37px;
+    background-color: unset;
+
+    &:hover {
+      border: 1px solid $C-Bg-4;
+      background-color: $C-Bg-4;
+    }
+  }
+
+  &:hover {
+    background-color: $C-Hover;
+  }
+}

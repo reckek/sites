@@ -1,0 +1,66 @@
+@mixin container($braeckpoint, $conent...) {
+  // ╔═════════════════════════════════════════════════════╗
+  // ║                Использованеие                       ║
+  // ╠═════════════════════════════════════════════════════╣
+  // ║ @include container(BrackePoint) using ($type) {...} ║
+  // ╚═════════════════════════════════════════════════════╝
+
+  // <====================>
+  // SETTINGS GRID
+  $value: check-braeckpoint($braeckpoint);
+  // <====================>
+
+  @if $is-mobile-first == true {
+    // ╔════════╦══════════╗
+    // ║Данные  ║ Значения ║
+    // ╠════════╬══════════╣
+    // ║ sm     ║ <=576px  ║
+    // ╠════════╬══════════╣
+    // ║ xs     ║ >=576px  ║
+    // ╠════════╬══════════╣
+    // ║ md     ║ >=768px  ║
+    // ╠════════╬══════════╣
+    // ║ lg     ║ >=992px  ║
+    // ╠════════╬══════════╣
+    // ║ xl     ║ >=1200px ║
+    // ╠════════╬══════════╣
+    // ║ xxl    ║ >=1400px ║
+    // ╚════════╩══════════╝
+    @if $braeckpoint != sm {
+      @media (min-width: $value) {
+        @content ($conent);
+      }
+    }
+    @if $braeckpoint == sm {
+      @media (max-width: $value) {
+        @content ($conent);
+      }
+    }
+  }
+
+  // (Now usege)
+  // @if $is-mobile-first == false {
+  //   @if $braeckpoint != sm {
+  //     @media (max-width: $value) {
+  //       @content ($conent);
+  //     }
+  //   }
+  //   @if $braeckpoint == sm {
+  //     @media (min-width: $value) {
+  //       @content ($conent);
+  //     }
+  //   }
+  // }
+}
+
+// <== FONTS ==>
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../assets/fonts/#{$file_name}.woff") format("woff"),
+      url("../assets/fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style}; // normal, italic, oblique
+  }
+}

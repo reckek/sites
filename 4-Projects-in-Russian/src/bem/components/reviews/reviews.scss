@@ -1,0 +1,75 @@
+.reviews {
+  position: relative;
+  padding: min(6vw, 150px) 0;
+
+  // .reviews__title
+
+  &__title {
+    text-align: center;
+    font-size: min(6vw, 2rem);
+    margin-bottom: min(6vw, 60px);
+  }
+
+  // .reviews__citations
+
+  &__citations {
+  }
+}
+
+.citations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  // overflow: hidden;
+  gap: 20px;
+
+  // .citations__item
+
+  &__item {
+    position: relative;
+    // min-width: 80%;
+    @include container(md) using ($type) {
+      & {
+        max-width: 350px;
+      }
+    }
+  }
+
+  // .citations__bg
+
+  &__bg {
+    padding: min(6vw, 30px) min(9vw, 30px);
+    background-color: var(--C-GrayLite);
+  }
+  // .citations__header
+
+  &__header {
+    position: absolute;
+    font-size: min(25vw, 9rem);
+    line-height: min(18vw, 6rem);
+    color: var(--C-Accent);
+    user-select: none;
+  }
+
+  // .citations__content
+
+  &__content {
+    margin-top: min(10vw, 50px);
+    font-size: 1rem;
+    color: var(--C-Gray);
+  }
+
+  // .citations__info
+
+  &__info {
+    margin-top: min(3vw, 50px);
+    font-size: min(7vw, 1.4rem);
+    font-weight: 700;
+    color: var(--C-Dark);
+
+    &--red {
+      color: var(--C-Accent);
+    }
+  }
+}

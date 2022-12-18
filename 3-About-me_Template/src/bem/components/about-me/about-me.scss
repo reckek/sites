@@ -1,0 +1,14 @@
+.about-me {
+    padding: min(11vw, 119px) 0;
+    &__body {
+        margin: 0 auto;
+        max-width: 540px;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: min(4vw, 5vw);
+    }
+    &__desc {
+        text-align: center;
+    }
+}

@@ -1,0 +1,50 @@
+.line {
+  padding: 40px 0;
+  background-color: $C-Bg-1;
+
+  // .line__container
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 50px;
+  }
+
+  // .line__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // .line__title
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(24);
+    color: $C-Text-4;
+  }
+
+  // .line__subtitle
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: rem(14);
+    color: $C-Text-3;
+  }
+
+  // .line__btn
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: 716px) {
+      width: unset;
+      text-align: center;
+    }
+  }
+}

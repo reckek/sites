@@ -1,0 +1,31 @@
+.nav {
+  padding: 0 10px;
+
+  // .nav__items
+
+  &__items {
+    display: flex;
+    gap: 30px;
+  }
+
+  // .nav__item
+
+  &__item {
+    > a {
+      display: inline-block;
+      font-size: min(20vw, 1.6rem);
+      color: #000;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        color: var(--C-Gray);
+      }
+    }
+  }
+
+  @include container(md) using ($type) {
+    // .nav
+    display: flex;
+    align-items: center;
+  }
+}

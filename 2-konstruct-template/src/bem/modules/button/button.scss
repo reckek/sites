@@ -1,0 +1,16 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 29px;
+  text-transform: uppercase;
+  color: var(--C-Text-1);
+  background-color: var(--C-Bg-1);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--C-Text-3);
+    background-color: var(--C-Bg-2);
+  }
+}

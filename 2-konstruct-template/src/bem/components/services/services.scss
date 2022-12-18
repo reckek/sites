@@ -1,0 +1,75 @@
+.services {
+  // .services__header
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: min(6vw, 80px);
+    gap: 15px;
+  }
+
+  // .services__title
+
+  &__title {
+    display: block;
+  }
+
+  // .services__description
+
+  &__description {
+    flex-basis: 405px;
+    font-size: 11px;
+    color: var(--C-Text-2);
+  }
+
+  // .services__cards
+
+  &__cards {
+  }
+}
+
+.cards {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(1, 1fr);
+  gap: min(3vw, 30px);
+
+  // .cards__item
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--C-Line-1);
+    padding: 22px;
+  }
+
+  // .cards__icon
+
+  &__icon {
+    margin-bottom: 25px;
+    max-width: 59px;
+    max-height: 75px;
+  }
+
+  // .cards__title
+
+  &__title {
+    margin-bottom: 13px;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--C-Text-2);
+  }
+
+  // .cards__text
+
+  &__text {
+  }
+
+  @include container(md) using ($type) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

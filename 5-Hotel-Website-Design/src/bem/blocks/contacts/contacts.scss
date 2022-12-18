@@ -1,0 +1,28 @@
+.contacts {
+  // .contacts__icon
+
+  &__icon {
+    padding: toem(10);
+    font-size: torem(16);
+    color: $C-Text-1;
+    transition: color 0.4s ease;
+
+    &:hover {
+      &.contacts__icon--meta {
+        color: #335bf5;
+      }
+
+      &.contacts__icon--instagram {
+        color: #e51f5a;
+      }
+
+      &.contacts__icon--twitter {
+        color: #20a6df;
+      }
+
+      &.contacts__icon--youtube {
+        color: #e42f08;
+      }
+    }
+  }
+}

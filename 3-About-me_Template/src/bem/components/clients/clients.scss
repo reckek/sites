@@ -1,0 +1,26 @@
+.clients {
+  padding: min(2vw, 70px) 0;
+
+  &__row {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  @include container(md) using ($type) {
+    &__row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @include container(lg) using ($type) {
+    &__row {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0;
+    }
+  }
+  
+  &__link {
+    user-select: none;
+  }
+}

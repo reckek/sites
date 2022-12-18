@@ -1,0 +1,49 @@
+.first-screen {
+  background-color: $color-1;
+  padding-top: 100px;
+  padding-bottom: min(6vw, 30vw);
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 20px 0;
+  }
+  &__computer {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  &__title {
+    text-align: center;
+    margin-bottom: min(3vw, 6vw);
+  }
+  &__desc {
+    text-align: center;
+    margin-bottom: min(3vw, 6vw);
+  }
+  &__btn {
+    // display: block;
+    margin: 0 auto;
+  }
+
+  @include container(md) using ($type) {
+    &__body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+      padding: 20px 0;
+    }
+    &__computer {
+      display: block;
+    }
+  }
+}
+
+

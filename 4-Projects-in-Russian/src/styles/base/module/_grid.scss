@@ -1,0 +1,56 @@
+$breakPoints: (
+  sm: 576px,
+  xs: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1110px,
+  xxl: 1400px,
+);
+$columns: 12;
+$gap: 16px;
+
+.container {
+  margin: 0 auto;
+
+  transition: all .4s;
+  max-width: var(--container-maw);
+  padding: var(--container-pad);
+}
+
+@if $is-mobile-first == true {
+  @each $index, $value in $breakPoints {
+    @if $index != sm {
+      @media (min-width: $value) {
+        .container {
+          min-width: $value;
+        }
+      }
+    }
+
+    @if $index == sm {
+      @media (max-width: $value) {
+        .container {
+          max-width: $value;
+        }
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $gap;
+  box-sizing: border-box;
+
+  & > .row-not-grow {
+    flex-grow: 0;
+  }
+
+  @for $index from 1 to ($columns + 1) {
+    & > .col-#{$index} {
+      flex: 1 1 calc((100% / $columns * $index) - $gap);
+    }
+  }
+}

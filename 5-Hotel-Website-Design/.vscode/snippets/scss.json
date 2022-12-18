@@ -1,0 +1,44 @@
+{
+  "scss media": {
+    "scope": "scss",
+    "prefix": "gp-media",
+    "body": ["@include container() using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса"
+  },
+  "1-scss media sm": {
+    "scope": "scss",
+    "prefix": "gp-media-1",
+    "body": ["@include container(sm) using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса (sm>=window)"
+  },
+  "2-scss media xs": {
+    "scope": "scss",
+    "prefix": "gp-media-2",
+    "body": ["@include container(xs) using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса (xs)"
+  },
+  "3-scss media md": {
+    "scope": "scss",
+    "prefix": "gp-media-3",
+    "body": ["@include container(md) using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса (md)"
+  },
+  "4-scss media lg": {
+    "scope": "scss",
+    "prefix": "gp-media-4",
+    "body": ["@include container(lg) using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса (lg)"
+  },
+  "5-scss media xl": {
+    "scope": "scss",
+    "prefix": "gp-media-5",
+    "body": ["@include container(xl) using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса (xl)"
+  },
+  "6-scss media xxl": {
+    "scope": "scss",
+    "prefix": "gp-media-6",
+    "body": ["@include container(xxl) using (\\$type) {", "   $2", "}"],
+    "description": "быстрое выведение media запроса (xxl)"
+  }
+}
